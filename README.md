@@ -1,4 +1,4 @@
-[solu_o_eletr_nica_de_votos_tjpb (13).html](https://github.com/user-attachments/files/31981118/solu_o_eletr_nica_de_votos_tjpb.13.html)
+(https://github.com/user-attachments/files/31981118/solu_o_eletr_nica_de_votos_tjpb.13.html)
 <!DOCTYPE html>
 <html lang="pt-BR" class="h-full">
 <head>
