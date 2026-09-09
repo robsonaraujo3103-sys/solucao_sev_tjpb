@@ -1,12 +1,12 @@
-(https://github.com/user-attachments/files/31981118/solu_o_eletr_nica_de_votos_tjpb.13.html)
-<!DOCTYPE html>
+[gemini-code-1788980663096.html](https://github.com/user-attachments/files/32022338/gemini-code-1788980663096.html)
+[solu_o_eletr_nica_de_votos_sev_relatoria.html](https://github.com/user-attachments/files/32022340/solu_o_eletr_nica_de_votos_sev_relatoria.html)<!DOCTYPE html>
 <html lang="pt-BR" class="h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Solução Eletrônica de Votos (SEV-Relatoria) - TJPB</title>
     
-    <!-- Script Anti-FOUC para carregar o tema antes do render inicial -->
+    <!-- Script Anti-FOUC para carregar o tema antes da renderização visual -->
     <script>
         (function() {
             try {
@@ -79,7 +79,6 @@
             pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
         }
     </script>
-    <!-- Lucide UMD Bundle com fallback seguro -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     <script>
         if (typeof lucide === 'undefined') {
@@ -113,7 +112,7 @@
         }
 
         [data-theme="dark"] {
-            /* Equilibrium Judicial - Dark Mode Acessível & Elegante */
+            /* Equilibrium Judicial - Dark Mode Acessível e Elegante */
             --bg: #131E23;
             --surface: #1B2A31;
             --surface-soft: #23353D;
@@ -151,7 +150,7 @@
         ::-webkit-scrollbar-thumb:hover { background-color: var(--text-muted); }
         .scrollbar-custom::-webkit-scrollbar { width: 5px; }
 
-        /* Animação em Alto-Relevo (5 ciclos lentos para atrair atenção) */
+        /* Animação em Alto-Relevo (5 ciclos lentos para chamar a atenção) */
         @keyframes highReliefBlink {
             0%, 100% {
                 transform: scale(1) translateY(0);
@@ -199,7 +198,6 @@
             background: linear-gradient(to right, var(--accent-soft), var(--surface-soft));
         }
 
-        /* Botões Rápidos de Votação */
         .btn-vote {
             transition: all 0.15s ease;
             background-color: var(--surface);
@@ -253,7 +251,7 @@
             color: #ffffff !important;
         }
 
-        /* Editor Forense A4 Padronizado (Eternamente folha branca física) */
+        /* Editor Forense A4 Padronizado (Eternamente folha física branca com texto legível) */
         .editor-voto {
             font-family: Arial, Helvetica, sans-serif;
             font-size: 12pt;
@@ -289,7 +287,6 @@
             font-weight: 500;
         }
 
-        /* Régua Horizontal Forense */
         .regua-container {
             background: var(--surface-soft);
             border-bottom: 1px solid var(--border);
@@ -328,7 +325,7 @@
         .seg-btn { padding: 4px 10px; font-size: 10.5px; font-weight: 700; color: var(--text-muted); transition: all 0.2s; border-radius: 6px; }
         .seg-btn.active { background: var(--surface); color: var(--text-primary); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
 
-        /* Impressão Limpa em A4 */
+        /* Impressão Limpa em A4 com preservação de cores de revisão */
         @media print {
             body { background: white !important; color: black !important; }
             header, aside, #barra-atalhos-adaptativos, #editor-toolbar, .regua-container, #ai-drawer, #toast-container, .no-print {
@@ -339,6 +336,11 @@
             }
             .editor-voto {
                 box-shadow: none !important; border: none !important; padding: 0 !important; min-height: auto !important;
+            }
+            .edit-red {
+                color: #dc2626 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
             }
         }
     </style>
@@ -374,7 +376,6 @@
                     <span>Sistemas & IAs</span>
                 </button>
 
-                <!-- Links Rápidos Diretos (Desktop e Telas Médias/Grandes) -->
                 <div class="hidden lg:flex items-center gap-1 border-r border-border pr-2">
                     <a href="https://pjesg.tjpb.jus.br/pje2g/ng2/dev.seam#/painel-usuario-interno" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1 bg-surface-soft hover:bg-surface-hover text-info px-2 py-1 rounded-md border border-border font-semibold text-[10.5px]" title="PJe 2º Grau">
                         <i data-lucide="external-link" class="w-3 h-3"></i> PJe 2G
@@ -445,7 +446,6 @@
                     </div>
                 </div>
 
-                <!-- Botão de Aprendizado Adaptativo -->
                 <button onclick="abrirModalAprendizado()" class="flex items-center gap-1 bg-surface-soft hover:bg-surface-hover text-accent border border-border px-2 py-1 rounded-md text-[10.5px] font-bold transition-all" title="Motor de Aprendizado Adaptativo">
                     <i data-lucide="brain-circuit" class="w-3.5 h-3.5"></i>
                     <span class="hidden sm:inline">Adaptativo</span>
@@ -509,7 +509,6 @@
             </div>
         </div>
 
-        <!-- LINHA 2: Seletores de Câmara, Relator com Realce de Alto-Relevo, Data da Sessão e Contadores -->
         <div class="bg-surface-soft px-3 md:px-5 py-1.5 flex flex-wrap items-center justify-between gap-2 border-b border-border text-xs">
             
             <div class="flex items-center gap-1.5 flex-wrap">
@@ -597,7 +596,6 @@
                     <span>Atalhos Inteligentes:</span>
                 </div>
                 <div id="container-atalhos-inteligentes" class="flex items-center gap-1 overflow-x-auto scrollbar-custom">
-                    <!-- Gerados pelo AdaptiveEngine -->
                     <button onclick="filtrarPauta('Pendentes')" class="px-2 py-0.5 rounded bg-surface border border-border text-text-secondary hover:text-text-primary font-bold transition text-[10px]">Pendentes</button>
                     <button onclick="document.getElementById('input-busca-pauta').focus()" class="px-2 py-0.5 rounded bg-surface border border-border text-text-secondary hover:text-text-primary font-bold transition text-[10px]">Buscar</button>
                 </div>
@@ -634,7 +632,7 @@
 
             <!-- LISTA DE PROCESSOS -->
             <div id="container-lista-pauta" class="lista-processos flex-1 p-2.5 space-y-2 overflow-y-auto scrollbar-custom bg-bg">
-                <!-- Preenchido via JavaScript -->
+                <!-- Preenchido dinamicamente via JS -->
             </div>
 
             <!-- BARRA DE AÇÕES EM LOTE -->
@@ -655,7 +653,6 @@
 
         </aside>
 
-        <!-- ÁREA PRINCIPAL: LEITOR E EDITOR DE VOTOS -->
         <main id="main-leitor" class="flex-1 flex flex-col bg-bg overflow-hidden relative min-w-0">
 
             <!-- FAIXA DE SUGESTÃO DE PRÓXIMA AÇÃO (Motor Adaptativo) -->
@@ -735,7 +732,6 @@
                         </div>
                     </div>
 
-                    <!-- SEÇÃO: INTELIGÊNCIA ARTIFICIAL & PESQUISA -->
                     <div class="space-y-2">
                         <div class="flex items-center gap-2 text-text-secondary text-[11px] font-bold uppercase tracking-wider">
                             <i data-lucide="cpu" class="w-4 h-4 text-accent"></i>
@@ -827,7 +823,6 @@
                         </div>
                     </div>
 
-                    <!-- MANUAL SINTETIZADO E PRÉ-REQUISITOS GABINETE 24 -->
                     <div class="bg-surface-soft p-4 md:p-5 rounded-2xl border border-border text-xs text-text-secondary space-y-3">
                         <div class="flex items-center gap-2 text-text-primary font-bold">
                             <i data-lucide="book-open" class="w-4 h-4 text-accent"></i>
@@ -852,7 +847,6 @@
                 </div>
             </div>
 
-            <!-- PAINEL DE LEITURA E EDIÇÃO ATIVO -->
             <div id="painel-leitura-ativo" class="flex-1 flex flex-col h-full overflow-hidden hidden bg-surface shadow-xs z-10">
                 
                 <!-- Cabeçalho do Processo em Edição -->
@@ -943,7 +937,6 @@
                     </div>
                 </div>
 
-                <!-- Barra de Ferramentas WYSIWYG do Editor -->
                 <div id="editor-toolbar" class="bg-surface border-b border-border px-4 py-1.5 flex flex-wrap items-center gap-1.5 shrink-0 z-20 text-xs overflow-x-auto scrollbar-custom">
                     
                     <div class="flex items-center gap-0.5 bg-surface-soft border border-border rounded-lg p-0.5">
@@ -1039,7 +1032,6 @@
 
         </main>
 
-        <!-- GAVETA LATERAL DO ASSISTENTE IA -->
         <div id="ai-drawer" class="absolute right-0 top-0 bottom-0 w-full sm:w-[420px] bg-surface shadow-2xl z-[60] transform translate-x-full transition-transform duration-300 flex flex-col border-l border-border">
             <div class="p-4 border-b border-border flex items-center justify-between bg-surface-soft">
                 <div class="flex items-center gap-2">
@@ -1070,7 +1062,6 @@
 
     </div>
 
-    <!-- MODAL CENTRAL DE SISTEMAS, WORKSPACE & IAS -->
     <div id="modal-central-links" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-surface rounded-3xl p-6 max-w-2xl w-full shadow-2xl border border-border flex flex-col max-h-[90vh] text-xs text-text-primary space-y-4">
             
@@ -1210,7 +1201,6 @@
         </div>
     </div>
 
-    <!-- MODAL DO MOTOR DE APRENDIZADO ADAPTATIVO -->
     <div id="modal-aprendizado-adaptativo" class="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-surface rounded-3xl p-6 max-w-xl w-full shadow-2xl border border-border space-y-4 text-xs text-text-primary max-h-[85vh] flex flex-col">
             <div class="flex items-center justify-between border-b border-border pb-3">
@@ -1438,9 +1428,6 @@
         let editorSavedRange = null;
         let isModoRevisao = false;
 
-        /* ==========================================================================
-           2. MOTOR DE APRENDIZADO ADAPTATIVO (Adaptive Learning Engine)
-           ========================================================================== */
         const AdaptiveEngine = {
             storageKey: 'tjpb_sev_adaptive_profile',
             profile: {
@@ -1649,9 +1636,6 @@
             }
         };
 
-        /* ==========================================================================
-           3. MOTOR SEMÂNTICO DE JULGAMENTO (Conclusão, Dispositivo, Ementa)
-           ========================================================================== */
         function analisarSemanticaJulgamento(textoCompleto, classeProcessual = "") {
             if (!textoCompleto) return { resultado: null, confianca: 'BAIXA', origem: 'Indefinido', trecho: '' };
 
@@ -1766,9 +1750,6 @@
             return null;
         }
 
-        /* ==========================================================================
-           4. EXTRAÇÃO DE METADADOS & IMPORTAÇÃO DE ARQUIVOS (SEM PERDAS EM LOTE)
-           ========================================================================== */
         function normalizarNumeroCNJ(texto) {
             if (!texto) return "";
             const matchFormatado = texto.match(/\b\d{7}-\d{2}\.\d{4}\.\d\.\d{2}\.\d{4}\b/);
@@ -1981,9 +1962,6 @@
             }
         }
 
-        /* ==========================================================================
-           5. RENDERIZAÇÃO DA PAUTA & DESTAQUES LUMINOSOS
-           ========================================================================== */
         function getProcessosContextoAtual() {
             return appState.processos.filter(p =>
                 p.sessaoData === appState.sessaoData &&
@@ -2121,9 +2099,6 @@
             atualizarContadores();
         }
 
-        /* ==========================================================================
-           6. SINCRONIZAÇÃO DO LEITOR, EDITOR E ASSESSORES
-           ========================================================================== */
         function selecionarProcesso(procId) {
             appState.processoSelecionadoId = procId;
             salvarEstadoLocal();
@@ -2256,9 +2231,6 @@
             }
         }
 
-        /* ==========================================================================
-           7. COMANDOS WYSIWYG, RÉGUA E EXPORTAÇÃO (DOCX, ODT, PDF)
-           ========================================================================== */
         function executarComandoEditorFocado(cmd, value = null) {
             if (editorSavedRange) {
                 const sel = window.getSelection();
@@ -2430,7 +2402,6 @@
             if (mPPrin) mPPrin.style.left = `${pctP}%`;
         }
 
-        /* Exportadores Forenses com Preservação de Correções em Vermelho */
         async function exportarVotoCorrigidoAtivo(formato) {
             const proc = appState.processos.find(p => p.id === appState.processoSelecionadoId);
             if (!proc || !proc.documentos || !proc.documentos.length) return;
@@ -2447,7 +2418,6 @@
 
             const cnjLimpo = proc.cnj.replace(/\D/g, '');
 
-            // Helper para identificar nós com formatação de cor vermelha
             const verificarCorVermelha = (node, raiz) => {
                 let cur = node;
                 while (cur && cur !== raiz) {
@@ -2488,7 +2458,6 @@
                         }
                         p { margin: 0 0 1em 0; text-indent: ${recuo1aCm}cm; margin-left: ${recuoPCm}cm; }
                         blockquote, .citacao-longa { margin: 1.2em 0 1.2em 4.0cm !important; font-size: 10.5pt !important; line-height: 1.2 !important; text-indent: 0cm !important; }
-                        /* Preservação explícita de correções em vermelho na impressão A4 */
                         .edit-red, [style*="#dc2626"], [style*="220, 38, 38"], [style*="color: red"], font[color="#dc2626"] { 
                             color: #dc2626 !important; 
                             font-weight: 500 !important; 
@@ -2523,7 +2492,6 @@
                 tempDiv.innerHTML = htmlConteudo;
                 let wml = "";
 
-                // Converte elementos e trechos mantendo a tag <w:color w:val="DC2626"/> nas correções
                 const extrairRunsWord = (elementoPai) => {
                     let runsXml = "";
                     const walker = document.createTreeWalker(elementoPai, NodeFilter.SHOW_TEXT, null, false);
@@ -2630,9 +2598,6 @@
             }
         }
 
-        /* ==========================================================================
-           8. UTILITÁRIOS, DATAS, TEMA E EVENTOS DE INICIALIZAÇÃO
-           ========================================================================== */
         function inicializarDatas() {
             atualizarRelogio();
             setInterval(atualizarRelogio, 1000);
@@ -2981,16 +2946,6 @@
             procs.forEach((p, idx) => { 
                 p.seqSessao = n + idx; 
             });
-        }
-
-        function salvarModalConfigOrdem() {
-            appState.numInicioSessao = parseInt(document.getElementById('input-num-inicio-sessao').value) || 35;
-            const procs = getProcessosContextoAtual();
-            procs.forEach((p, idx) => { p.seqSessao = appState.numInicioSessao + idx; });
-            salvarEstadoLocal();
-            renderizarTudo();
-            fecharModal('modal-config-ordem');
-            exibirToast(`Sessão configurada a partir do nº ${appState.numInicioSessao}`);
         }
 
         function abrirModalNovaPauta() {
